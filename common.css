@@ -20,7 +20,7 @@
 /* ---------------------- */
 
 body {
-    background: url("https://cdn.discordapp.com/attachments/1098017674698702870/1254175693680410655/iu.png?ex=667889a2&is=66773822&hm=29439c956de1e575cdce4c64f4f18dc3a03559f2cb03d1c9cb65a2e42de55089&") no-repeat top left;
+    background: url("img/leftimg.png") no-repeat top left;
     background-size: auto 100vh;
     animation: animateBackground 60s linear infinite;
     font-family: YakuHanJP, 'Noto Sans JP','Helvetica Neue', YuGothic, Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif;
@@ -85,7 +85,7 @@ main {
     width: calc(100vw - 300px);
     height: calc(100vh - 40px);
     /* background: linear-gradient(to right, rgba(0, 0, 0, 98%), rgba(0, 0, 0, 1)); */
-    background: url("https://cdn.discordapp.com/attachments/1098017674698702870/1254175658901377095/iu.png?ex=6678899a&is=6677381a&hm=6f641e7421b34fd21cbe363083bf494778b993f4de01cc555765c19ea70588f6&");
+    background: url("img/wallpaper.png");
     background-size: cover;
     /* overflow-x: scroll; */
 }

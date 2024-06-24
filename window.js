@@ -12,6 +12,27 @@ function makeWindow(windowElement) {
     // Make movable
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     header.onmousedown = dragMouseDown;
+    // for touch devices
+    header.ontouchstart = function(e) {
+        e = e || window.event;
+        pos3 = e.touches[0].clientX;
+        pos4 = e.touches[0].clientY;
+        document.ontouchend = closeDragElement;
+        document.ontouchmove = elementDragTouch;
+    }
+
+    function elementDragTouch(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos1 = pos3 - e.touches[0].clientX;
+        pos2 = pos4 - e.touches[0].clientY;
+        pos3 = e.touches[0].clientX;
+        pos4 = e.touches[0].clientY;
+        if (windowElement.offsetTop - pos2 > minHeaderTopPosition) {
+            windowElement.style.top = (windowElement.offsetTop - pos2) + "px";
+        }
+        windowElement.style.left = (windowElement.offsetLeft - pos1) + "px";
+    }
 
     function dragMouseDown(e) {
         e = e || window.event;
@@ -38,6 +59,8 @@ function makeWindow(windowElement) {
     function closeDragElement() {
         document.onmouseup = null;
         document.onmousemove = null;
+        document.ontouchend = null;
+        document.ontouchmove = null;
     }
 
     // close button
@@ -59,6 +82,33 @@ function makeWindow(windowElement) {
         }
     }
 
+    windowElement.ontouchstart = function(e) {
+        currentMaxZIndex++;
+        windowElement.style.zIndex = currentMaxZIndex.toString();
+        if (e.target === windowElement) {
+            pos3 = e.touches[0].clientX;
+            pos4 = e.touches[0].clientY;
+            document.ontouchend = closeResizeElement;
+            document.ontouchmove = resizeElementTouch;
+            e.preventDefault();
+        }
+    }
+
+    function resizeElementTouch(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos1 = pos3 - e.touches[0].clientX;
+        pos2 = pos4 - e.touches[0].clientY;
+        pos3 = e.touches[0].clientX;
+        pos4 = e.touches[0].clientY;
+        if (windowElement.offsetWidth - pos1 > minWindowWidth) {
+            windowElement.style.width = (windowElement.offsetWidth - pos1) + "px";
+        }
+        if (windowElement.offsetHeight - pos2 > minWindowHeight) {
+            windowElement.style.height = (windowElement.offsetHeight - pos2) + "px";
+        }
+    }
+
     function resizeElement(e) {
         e = e || window.event;
         e.preventDefault();
@@ -77,6 +127,8 @@ function makeWindow(windowElement) {
     function closeResizeElement() {
         document.onmouseup = null;
         document.onmousemove = null;
+        document.ontouchend = null;
+        document.ontouchmove = null;
     }
 
     // Change cursor

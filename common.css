@@ -1,0 +1,107 @@
+@keyframes animateBackground {
+    0% { background-position: -220px 0; }
+    50% { background-position: -120px 0; }
+    100% { background-position: -220px 0; }
+}
+
+:root {
+    --primary-color: #1e1f22;
+        --primary-color-hover: #26282e;
+    --secondary-color: #2b2d30;
+        --secondary-color-hover: #43454a;
+    --text-color: white;
+        --text-color-hover: white;
+    --text-color-secondary: #bbbdc3;
+        --text-color-secondary-hover: #bbbdc3;
+    --border-color: #3c3f41;
+        --border-color-hover: #e0e0e0;
+}
+
+/* ---------------------- */
+
+body {
+    background: url("https://cdn.discordapp.com/attachments/1098017674698702870/1254175693680410655/iu.png?ex=667889a2&is=66773822&hm=29439c956de1e575cdce4c64f4f18dc3a03559f2cb03d1c9cb65a2e42de55089&") no-repeat top left;
+    background-size: auto 100vh;
+    animation: animateBackground 60s linear infinite;
+    font-family: YakuHanJP, 'Noto Sans JP','Helvetica Neue', YuGothic, Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif;
+    color: var(--text-color);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 5px 15px 5px 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 40px;
+    z-index: 100;
+}
+
+.login {
+    margin-right: 10px;
+}
+header button {
+    background-color: var(--secondary-color);
+    color: var(--text-color-secondary);
+    border-color: var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+header button:hover {
+    background-color: var(--secondary-color-hover);
+}
+
+
+
+header a {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    font-size: 1.5em;
+    position: fixed;
+    left: 300px;
+    top: 40px;
+    width: calc(100vw - 300px);
+    height: calc(100vh - 40px);
+    /* background: linear-gradient(to right, rgba(0, 0, 0, 98%), rgba(0, 0, 0, 1)); */
+    background: url("https://cdn.discordapp.com/attachments/1098017674698702870/1254175658901377095/iu.png?ex=6678899a&is=6677381a&hm=6f641e7421b34fd21cbe363083bf494778b993f4de01cc555765c19ea70588f6&");
+    background-size: cover;
+    /* overflow-x: scroll; */
+}
+/* width */
+::-webkit-scrollbar {
+    width: 2px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--secondary-color);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color-hover);
+}

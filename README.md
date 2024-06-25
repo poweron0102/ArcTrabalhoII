@@ -2,7 +2,20 @@
 cssclasses: []
 ---
 # Capítulo 1: Introdução
+Abordaremos a importância do estudo e da simulação de arquiteturas de processadores, com foco particular na arquitetura MIPS64 e na ferramenta EduMIPS64. A compreensão dos processadores e suas operações é essencial para estudantes e profissionais de engenharia da computação, pois permite o desenvolvimento de software mais eficiente e a otimização de sistemas de hardware.
+
+## Objetivo do Estudo
+O objetivo principal deste estudo é explorar e analisar a arquitetura do processador MIPS64, utilizando a ferramenta de simulação EduMIPS64. Através de simulações e questionários, buscamos entender melhor o funcionamento interno dos processadores, a execução de instruções, a gestão de ciclos de relógio e a eficiência do código executado. Este conhecimento é crucial para otimizar programas, melhorando seu desempenho e eficiência.
 # Capítulo 2: Descrição da ferramenta Edumips64
+## Principais Características do EduMIPS64
+### Interface Gráfica
+A interface gráfica do EduMIPS64 é projetada para ser amigável e interativa, ajudando os estudantes a compreenderem melhor o funcionamento interno de um processador MIPS64. A interface inclui:
+
+Janela de Registros: Exibe o estado atual dos registros do processador.
+Janela de Memória: Mostra o conteúdo da memória principal.
+Painel de Controle: Para iniciar, pausar e depurar a execução do programa.
+Simulação e Depuração
+As configurações do EduMIPS64 são acessíveis através de um menu dedicado, onde os usuários podem ajustar parâmetros do simulador.
 # Capítulo 3: Questionário
 ## Questão 1
 👍
